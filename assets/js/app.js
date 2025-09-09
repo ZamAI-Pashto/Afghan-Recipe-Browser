@@ -71,6 +71,14 @@ function init() {
       navigator.serviceWorker.register('service-worker.js').catch(console.error);
     });
   }
+
+  // Accessibility shortcut: "/" focuses search
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
 }
 
 function render() {
@@ -113,6 +121,7 @@ function render() {
     const ing = sel(card, '.ingredients');
     const steps = sel(card, '.steps');
 
+    img.loading = 'lazy';
     img.src = r.image;
     img.alt = r.title[state.lang] || r.title.en;
     title.textContent = r.title[state.lang] || r.title.en;
