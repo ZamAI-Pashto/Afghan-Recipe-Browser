@@ -27,6 +27,11 @@ const themeToggle = document.getElementById('themeToggle');
 // Init
 init();
 
+function t(key) {
+  const dict = messages[state.lang] || messages.en;
+  return dict[key] || messages.en[key] || key;
+}
+
 function init() {
   // Apply theme
   if (state.theme === 'light') document.documentElement.classList.add('light');
@@ -63,13 +68,12 @@ function init() {
   // PWA
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js').catch(console.error);
+      navigator.serviceWorker.register('service-worker.js').catch(console.error);
     });
   }
 }
 
 function render() {
-  const dict = messages[state.lang] || messages.en;
   const query = norm(state.q);
   const maxTime = state.time ? parseInt(state.time, 10) : Infinity;
   const out = filter(recipes, (r) => {
@@ -94,7 +98,7 @@ function render() {
   if (!out.length) {
     const empty = document.createElement('div');
     empty.className = 'empty';
-    empty.textContent = dict['empty'];
+    empty.textContent = t('empty');
     results.appendChild(empty);
     return;
   }
@@ -113,7 +117,9 @@ function render() {
     img.alt = r.title[state.lang] || r.title.en;
     title.textContent = r.title[state.lang] || r.title.en;
     desc.textContent = r.description[state.lang] || r.description.en;
-    meta.textContent = `${r.category} · ${r.timeMinutes} ${dict['meta.minutes']}`;
+
+    const catKey = `filters.${r.category}`; // main/side/dessert/drink/bread
+    meta.textContent = `${t(catKey)} · ${r.timeMinutes} ${t('meta.minutes')}`;
 
     // ingredients
     for (const item of r.ingredients[state.lang] || r.ingredients.en) {

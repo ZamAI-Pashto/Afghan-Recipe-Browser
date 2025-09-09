@@ -7,24 +7,24 @@
     <title>Afghan Recipe Browser</title>
     <meta name="description" content="Browse delicious Afghan recipes with search, filters, and offline support." />
 
-    <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="icon" href="/assets/img/icon-192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/assets/img/icon-192.png" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/img/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/img/icon-192.png" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header class="container header">
       <div class="brand">
-        <img src="/assets/img/icon-192.png" alt="Logo" class="logo" />
+        <img src="assets/img/icon-192.png" alt="Logo" class="logo" />
         <h1 data-i18n="app.title">Afghan Recipe Browser</h1>
       </div>
       <nav class="controls">
         <div class="search">
-          <input id="searchInput" type="search" placeholder="Search recipes…" data-i18n-placeholder="search.placeholder" />
+          <input id="searchInput" type="search" placeholder="Search recipes…" data-i18n-placeholder="search.placeholder" aria-label="Search" />
         </div>
         <div class="filters">
-          <select id="categoryFilter">
+          <select id="categoryFilter" aria-label="Category">
             <option value="" data-i18n="filters.all">All</option>
             <option value="main" data-i18n="filters.main">Main</option>
             <option value="side" data-i18n="filters.side">Side</option>
@@ -32,14 +32,14 @@
             <option value="drink" data-i18n="filters.drink">Drink</option>
             <option value="bread" data-i18n="filters.bread">Bread</option>
           </select>
-          <select id="dietFilter">
+          <select id="dietFilter" aria-label="Diet">
             <option value="" data-i18n="filters.anyDiet">Any diet</option>
             <option value="vegetarian" data-i18n="filters.vegetarian">Vegetarian</option>
             <option value="vegan" data-i18n="filters.vegan">Vegan</option>
             <option value="glutenFree" data-i18n="filters.glutenFree">Gluten-free</option>
             <option value="halal" data-i18n="filters.halal">Halal</option>
           </select>
-          <select id="timeFilter">
+          <select id="timeFilter" aria-label="Time">
             <option value="" data-i18n="filters.anyTime">Any time</option>
             <option value="15">≤ 15m</option>
             <option value="30">≤ 30m</option>
@@ -92,6 +92,6 @@
       </p>
     </footer>
 
-    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
   </body>
 </html>
