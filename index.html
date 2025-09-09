@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afghan Recipe Browser - Authentic Afghan Cuisine</title>
+    <meta name="description" content="Discover authentic Afghan recipes including Kabuli Pulao, Mantu, Ashak, and more traditional dishes from Afghanistan.">
+    <meta name="keywords" content="Afghan recipes, Afghanistan food, Kabuli Pulao, Mantu, traditional recipes, Afghan cuisine">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <h1>Afghan Recipe Browser</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#recipes" class="nav-link">Recipes</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Discover Authentic Afghan Cuisine</h2>
+                <p>Explore traditional recipes passed down through generations</p>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for recipes..." class="search-input">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Recipes</button>
+                <button class="filter-btn" data-category="rice">Rice Dishes</button>
+                <button class="filter-btn" data-category="meat">Meat Dishes</button>
+                <button class="filter-btn" data-category="vegetables">Vegetables</button>
+                <button class="filter-btn" data-category="desserts">Desserts</button>
+                <button class="filter-btn" data-category="bread">Bread & Pastries</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="recipes">
+        <div class="container">
+            <h2 class="section-title">Traditional Afghan Recipes</h2>
+            <div id="recipeGrid" class="recipe-grid">
+                <!-- Recipes will be dynamically loaded here -->
+            </div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <p>No recipes found matching your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent" class="modal-body">
+                <!-- Recipe details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Afghan Cuisine</h2>
+            <div class="about-content">
+                <p>Afghan cuisine is a rich tapestry of flavors influenced by the country's position along the ancient Silk Road. Our recipes represent authentic dishes that have been cherished by Afghan families for generations.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Traditional recipes using fresh herbs, spices, and quality ingredients</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-history"></i>
+                        <h3>Time-Honored</h3>
+                        <p>Recipes passed down through generations of Afghan cooks</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>Made with Love</h3>
+                        <p>Each dish prepared with care and attention to traditional methods</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Afghan Recipe Browser</h3>
+                    <p>Preserving and sharing the rich culinary heritage of Afghanistan</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Afghan Recipe Browser. Made with ❤️ for Afghan cuisine lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="recipes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
