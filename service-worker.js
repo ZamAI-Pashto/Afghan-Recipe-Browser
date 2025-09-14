@@ -53,7 +53,6 @@ self.addEventListener('fetch', (e) => {
           if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
             return caches.match('index.html');
           }
-          return caches.match('index.html');
         });
     })
   );
