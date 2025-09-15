@@ -2,6 +2,8 @@
 
 A fast, offline-ready, multilingual (English, Pashto, Dari) browser for Afghan recipes. Features search, filters, favorites, light/dark theme, and PWA install.
 
+Live: https://zamai-pashto.github.io/Afghan-Recipe-Browser/
+
 ## Features
 
 - Search across names, descriptions, and ingredients (all languages)
