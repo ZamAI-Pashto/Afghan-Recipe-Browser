@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Kabuli Pulao",
+    "img": "",
+    "ingredients": ["Rice", "Lamb", "Carrots", "Raisins", "Spices"],
+    "instructions": "Cook lamb with spices, steam rice, and top with caramelized carrots and raisins."
+  },
+  {
+    "name": "Bolani",
+    "img": "",
+    "ingredients": ["Flour", "Potatoes", "Leeks", "Oil", "Salt"],
+    "instructions": "Make flatbread stuffed with seasoned potatoes/leeks and pan-fry."
+  },
+  {
+    "name": "Mantu",
+    "img": "",
+    "ingredients": ["Dumpling wrappers", "Minced meat", "Onion", "Yogurt", "Dried mint"],
+    "instructions": "Fill wrappers with minced meat and onion, steam, then top with yogurt and mint."
+  }
+]

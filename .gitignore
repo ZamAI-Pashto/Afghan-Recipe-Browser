@@ -1,4 +1,8 @@
-
-
-#Ignore insiders AI rules
-.github/instructions/codacy.instructions.md
+node_modules/
+dist/
+.parcel-cache/
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+.DS_Store

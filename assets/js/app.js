@@ -68,7 +68,7 @@ function init() {
   // PWA
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js').catch(console.error);
+
     });
   }
 
@@ -124,6 +124,7 @@ function render() {
     img.loading = 'lazy';
     img.src = r.image;
     img.alt = r.title[state.lang] || r.title.en;
+
     title.textContent = r.title[state.lang] || r.title.en;
     desc.textContent = r.description[state.lang] || r.description.en;
 
@@ -165,4 +166,3 @@ function updateFavBtn(btn, active) {
 function sel(root, q) { return root.querySelector(q); }
 function norm(s) { return (s || '').toString().trim().toLowerCase(); }
 function filter(arr, fn) { const out = []; for (const x of arr) if (fn(x)) out.push(x); return out; }
-function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
