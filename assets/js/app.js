@@ -68,7 +68,7 @@ function init() {
   // PWA
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js').catch(console.error);
+
     });
   }
 
@@ -124,9 +124,7 @@ function render() {
     img.loading = 'lazy';
     img.src = r.image;
     img.alt = r.title[state.lang] || r.title.en;
-    img.onerror = () => {
-      img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NzM4NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==';
-    };
+
     title.textContent = r.title[state.lang] || r.title.en;
     desc.textContent = r.description[state.lang] || r.description.en;
 
@@ -168,4 +166,3 @@ function updateFavBtn(btn, active) {
 function sel(root, q) { return root.querySelector(q); }
 function norm(s) { return (s || '').toString().trim().toLowerCase(); }
 function filter(arr, fn) { const out = []; for (const x of arr) if (fn(x)) out.push(x); return out; }
-function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
